@@ -1,0 +1,14 @@
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.GeneratedMSBuildEditorConfig.editorconfig
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.AssemblyInfoInputs.cache
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.AssemblyInfo.cs
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.csproj.CoreCompileInputs.cache
+/home/divan/Desktop/ATP/LISTA-04-ATP/bin/Debug/net8.0/LISTA-04-ATP
+/home/divan/Desktop/ATP/LISTA-04-ATP/bin/Debug/net8.0/LISTA-04-ATP.deps.json
+/home/divan/Desktop/ATP/LISTA-04-ATP/bin/Debug/net8.0/LISTA-04-ATP.runtimeconfig.json
+/home/divan/Desktop/ATP/LISTA-04-ATP/bin/Debug/net8.0/LISTA-04-ATP.dll
+/home/divan/Desktop/ATP/LISTA-04-ATP/bin/Debug/net8.0/LISTA-04-ATP.pdb
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.dll
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/refint/LISTA-04-ATP.dll
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.pdb
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.genruntimeconfig.cache
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/ref/LISTA-04-ATP.dll
