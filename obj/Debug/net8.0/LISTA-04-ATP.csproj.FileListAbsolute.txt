@@ -12,3 +12,4 @@
 /home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.pdb
 /home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.genruntimeconfig.cache
 /home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/ref/LISTA-04-ATP.dll
+/home/divan/Desktop/ATP/LISTA-04-ATP/obj/Debug/net8.0/LISTA-04-ATP.sourcelink.json
