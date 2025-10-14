@@ -13,17 +13,21 @@ public class questao2
 
 static void roda()
 {
-    double s, nf, ms, st=0 , x=0;
-    do
-    {
-        Console.WriteLine("digite seu salário (ou negativo para sair):");
-        s = double.Parse(Console.ReadLine());
-        Console.WriteLine("digite o número de filhos:");
-        nf = double.Parse(Console.ReadLine());
+        double s = 0, nf, ms, st = 0, x = 0;
+        string p;
+        do
+        {
+
+            Console.WriteLine("digite seu salário:");
+            s = double.Parse(Console.ReadLine());
+            Console.WriteLine("digite o número de filhos:");
+            nf = double.Parse(Console.ReadLine());
             x++;
             st += s;
-    } while (s >= 0);
-        ms = st / x;
-        Console.WriteLine("a média de salário da população é: " + ms);
+            Console.WriteLine("deseja continuar? (s/n)");
+            p = Console.ReadLine();
+        } while (p == "s");
+            ms = st / x;
+            Console.WriteLine("a média de salário da população é: " + ms);
 }
 }
