@@ -1,30 +1,39 @@
-﻿/*QUESTÃO-04-Em matemática, o algoritmo de Euclides é um método simples e eficiente de encontrar o
-Máximo Divisor Comum (MDC) entre dois números inteiros diferentes de zero. Crie uma
-função que receba dois números e calcule o MDC.*/
+﻿/*QUESTÃO-05-Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo.
+A função deve retornar um valor lógico (true ou false). Faça um programa que lê N
+números e para cada um deles exibe uma mensagem informando se ele é positivo ou não,
+dependendo se foi retornado verdadeiro ou falso pela função.*/
 
-class Questao4 
+class questao5
 {
     static void Main() 
     {
-        roda();
-    }
-    public static void roda() //função que roda o programa
-    {
-        Console.WriteLine("digite um número inteiro diferente de zero:");
-        int x = int.Parse(Console.ReadLine());
-        Console.WriteLine("digite outro número inteiro diferente de zero:");
-        int y = int.Parse(Console.ReadLine());
-        int r = mdc(x, y); //chama a função mdc e armazena o resultado em r
-        Console.WriteLine($"O MDC entre {0} e {1} é {2}",x,y,r); 
-    }
-    static int mdc(int x, int y) //função que calcula o MDC
-    {
-        while (y != 0) //enquanto y for diferente de zero
+        double n;
+        string resp;
+        do 
         {
-            int r = x % y; //r recebe o resto da divisão de x por y
-            x = y; 
-            y = r;
+            Console.Write("Digite um número: ");
+            n = double.Parse(Console.ReadLine());
+            if (positivo(n)) //chamada da função
+            {
+                Console.WriteLine("O número é positivo!");
+            }
+            else
+            {
+                Console.WriteLine("O número é negativo!");
+            }
+            Console.Write("Deseja continuar? (s/n): "); 
+            resp = Console.ReadLine();
+        } while (resp == "s"); //condição de parada
+    }
+    static bool positivo(double n) //função que verifica se o número é positivo ou negativo
+    {
+        if (n >= 0) //se o número for maior ou igual a zero, é positivo
+        {
+            return true; //retorna verdadeiro
         }
-        return x; //retorna o valor de x, que é o MDC
+        else //se o número for menor que zero, é negativo
+        {
+            return false; //retorna falso
+        }
     }
 }
