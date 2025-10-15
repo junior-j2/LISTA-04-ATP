@@ -1,57 +1,30 @@
-﻿/*QUESTÃO-03-Escreva um procedimento que receba 3 valores reais X, Y e Z e que verifique se esses
-valores podem ser os comprimentos dos lados de um triângulo e, neste caso, exibe qual é o
-tipo de triângulo formado. Para que X, Y e Z formem um triângulo é necessário que a
-seguinte propriedade seja satisfeita: o comprimento de cada lado de um triângulo é menor
-do que a soma do comprimento dos outros dois lados. O procedimento deve identificar o
-tipo de triângulo formado observando as seguintes definições:
-- Triângulo Equilátero: os comprimentos dos 3 lados são iguais;
-- Triângulo Isósceles: os comprimentos de pelo menos 2 lados são iguais.
-- Triângulo Qualquer: os comprimentos dos 3 lados são diferentes.
-Faça um programa que leia um número indeterminado de triângulos (valores dos 3 lados) e
-para cada triângulo, acione o procedimento.*/
+﻿/*QUESTÃO-04-Em matemática, o algoritmo de Euclides é um método simples e eficiente de encontrar o
+Máximo Divisor Comum (MDC) entre dois números inteiros diferentes de zero. Crie uma
+função que receba dois números e calcule o MDC.*/
 
-public class questao3
+class Questao4 
 {
-    public static void Main() // ponto de entrada do programa
+    static void Main() 
     {
-        roda(); // chama a função roda
+        roda();
     }
-    static void roda() // função roda
+    public static void roda() //função que roda o programa
     {
-        double x, y, z;
-        string resposta;
-
-        do
-        {
-            Console.Write("Digite o valor do lado X: ");
-            x = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o valor do lado Y: ");
-            y = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Digite o valor do lado Z: ");
-            z = Convert.ToDouble(Console.ReadLine());
-
-            verificarTriangulo(x, y, z); // chama a função verificarTriangulo
-
-            Console.Write("Deseja verificar outro triângulo? (s/n): ");
-            resposta = Console.ReadLine();
-        } while (resposta == "s"); // repete enquanto a resposta for "s"
+        Console.WriteLine("digite um número inteiro diferente de zero:");
+        int x = int.Parse(Console.ReadLine());
+        Console.WriteLine("digite outro número inteiro diferente de zero:");
+        int y = int.Parse(Console.ReadLine());
+        int r = mdc(x, y); //chama a função mdc e armazena o resultado em r
+        Console.WriteLine($"O MDC entre {0} e {1} é {2}",x,y,r); 
     }
-    static void verificarTriangulo(double x, double y, double z) // função que verifica o tipo de triângulo
+    static int mdc(int x, int y) //função que calcula o MDC
     {
-        if (x < y + z && y < x + z && z < x + y) // verifica se os lados formam um triângulo
+        while (y != 0) //enquanto y for diferente de zero
         {
-            if (x == y && y == z) // verifica se os lados são iguais
-            {
-                Console.WriteLine("Triângulo Equilátero");
-            }
-            else if (x == y || y == z || x == z) // verifica se pelo menos dois lados são iguais
-            {
-                Console.WriteLine("Triângulo Isósceles");
-            }
+            int r = x % y; //r recebe o resto da divisão de x por y
+            x = y; 
+            y = r;
         }
-        if (x != y && y != z && x != z) // verifica se os lados são diferentes
-        {
-            Console.WriteLine("Triângulo qualquer");
-        }
+        return x; //retorna o valor de x, que é o MDC
     }
 }
