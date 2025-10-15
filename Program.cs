@@ -1,39 +1,23 @@
-﻿/*QUESTÃO-05-Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo.
-A função deve retornar um valor lógico (true ou false). Faça um programa que lê N
-números e para cada um deles exibe uma mensagem informando se ele é positivo ou não,
-dependendo se foi retornado verdadeiro ou falso pela função.*/
+﻿/*QUESTÃO-06-Escreva um procedimento que receba como parâmetro o valor do salário e o índice de
+reajuste e calcule o salário atualizado. O método principal deve ler os dados, enviar para o
+procedimento e escrever o novo salário.*/
 
-class questao5
+class questao6
 {
-    static void Main() 
+    static void Main()
     {
-        double n;
-        string resp;
-        do 
-        {
-            Console.Write("Digite um número: ");
-            n = double.Parse(Console.ReadLine());
-            if (positivo(n)) //chamada da função
-            {
-                Console.WriteLine("O número é positivo!");
-            }
-            else
-            {
-                Console.WriteLine("O número é negativo!");
-            }
-            Console.Write("Deseja continuar? (s/n): "); 
-            resp = Console.ReadLine();
-        } while (resp == "s"); //condição de parada
+        double s, r, ns;
+        Console.WriteLine("Digite o salário atual: "); 
+        s = double.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o índice de reajuste: ");
+        r = double.Parse(Console.ReadLine());
+        ns = salarioatualizado(s, r);  //chamada do método
+        Console.WriteLine("O novo salário é: " + ns);
     }
-    static bool positivo(double n) //função que verifica se o número é positivo ou negativo
+    static double salarioatualizado(double s, double r) //método que calcula o novo salário
     {
-        if (n >= 0) //se o número for maior ou igual a zero, é positivo
-        {
-            return true; //retorna verdadeiro
-        }
-        else //se o número for menor que zero, é negativo
-        {
-            return false; //retorna falso
-        }
+        double ns;
+        ns = s + (s * r / 100); //cálculo do novo salário
+        return ns; //retorna o novo salário para o método principal
     }
 }
