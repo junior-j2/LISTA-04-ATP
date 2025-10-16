@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LISTA-04-ATP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+559b96871b990b49130abb1642c3da5762e14c32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47b005f3a09140b0f49a5886bb422da5cea52cec")]
 [assembly: System.Reflection.AssemblyProductAttribute("LISTA-04-ATP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LISTA-04-ATP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

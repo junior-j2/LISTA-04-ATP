@@ -1,40 +1,50 @@
-﻿/*QUESTÃO-09-Faça um procedimento que recebe, por parâmetro, a hora de início e a hora de término de
-um jogo, ambas subdivididas em 2 valores distintos: horas e minutos. O procedimento deve
-retornar, também por parâmetro (ref), a duração do jogo em horas e minutos, considerando
-que o tempo máximo de duração de um jogo é de 24 horas e que o jogo pode começar em
-um dia e terminar no outro.*/
+﻿/*QUESTÃO-10- Faça uma função que recebe a média final de um aluno por parãmetro e retorna o seu
+conceito, conforme a tabela abaixo:
+Nota Conceito
+de 0,0 a 4,9 D
+de 5,0 a 6,9 C
+de 7,0 a 8,9 B
+de 9,0 a 10,0 A*/
 
-class questao9
+class questao10
 {
     static void Main()
     {
-        int horaInicio, minutoInicio, horaTermino, minutoTermino;
-        int duracaoHoras = 0, duracaoMinutos = 0; // Variáveis para armazenar a duração do jogo
-        Console.WriteLine("Digite a hora de início do jogo (0-23):");
-        horaInicio = int.Parse(Console.ReadLine());
-        Console.WriteLine("Digite os minutos de início do jogo (0-59):");
-        minutoInicio = int.Parse(Console.ReadLine());
-        Console.WriteLine("Digite a hora de término do jogo (0-23):");
-        horaTermino = int.Parse(Console.ReadLine());
-        Console.WriteLine("Digite os minutos de término do jogo (0-59):");
-        minutoTermino = int.Parse(Console.ReadLine());
-        CalcularDuracaoJogo(horaInicio, minutoInicio, horaTermino, minutoTermino, ref duracaoHoras, ref duracaoMinutos); // Chama o procedimento para calcular a duração do jogo
-        Console.WriteLine("A duração do jogo foi de {0} horas e {1} minutos.",duracaoHoras,duracaoMinutos);
+        rodar(); //chama o método rodar
     }
-    static void CalcularDuracaoJogo(int horaInicio, int minutoInicio, int horaTermino, int minutoTermino, ref int duracaoHoras, ref int duracaoMinutos) // Procedimento para calcular a duração do jogo
+    static void rodar() //método que executa o programa
     {
-        if (minutoTermino < minutoInicio) // Ajusta os minutos se necessário
+        Console.Write("Digite a média final do aluno: ");
+        double media = Convert.ToDouble(Console.ReadLine());
+        if (media < 0 || media > 10) //verifica se a média é válida
         {
-            minutoTermino += 60;
-            horaTermino--;
+            Console.WriteLine("Nota final inválida!");
         }
-
-        if (horaTermino < horaInicio) // Ajusta as horas se necessário
+        else //se a média for válida, chama o método conceito e imprime o resultado
+        Console.WriteLine("a nota conceito do aluno é: {0}", conceito(media));
+    }
+    static char conceito(double media) //método que retorna o conceito do aluno
+    {
+        if (media >= 0 && media <= 4.9) //verifica em qual faixa a média se encontra e retorna o conceito correspondente
         {
-            horaTermino += 24;
+            return 'D';
         }
-
-        duracaoHoras = horaTermino - horaInicio; 
-        duracaoMinutos = minutoTermino - minutoInicio; 
+        else if (media >= 5 && media <= 6.9) 
+        {
+            return 'C';
+        }
+        else if (media >= 7 && media <= 8.9)
+        {
+            return 'B';
+        }
+        else if (media >= 9 && media <= 10)
+        {
+            return 'A';
+        }
+        else //caso a média seja inválida, retorna um caractere vazio
+        {
+            Console.WriteLine("Média inválida!");
+            return ' ';
+        }
     }
 }
