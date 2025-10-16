@@ -295,3 +295,93 @@ class questao7
     }
 }
 ```
+
+**QUESTÃO-08**
+
+```csharp
+
+/*QUESTÃO-08-Escreva uma função que verifique se um número é primo. Sua função deve retornar
+verdadeiro ou falso. O parâmetro de entrada é o número a ser verificado.*/
+
+class questao8
+{
+    static void Main()
+    {
+        Console.WriteLine("Digite um número para verificar se é primo: ");
+        int numero = int.Parse(Console.ReadLine());
+        bool resultado = VerificarPrimo(numero); // Chama a função para verificar se é primo
+        if (resultado) // Se for primo
+        {
+            Console.WriteLine("{0} é um número primo.",numero); 
+        }
+        else // Se não for primo
+        {
+            Console.WriteLine("{0} não é um número primo.",numero);
+        }
+    }
+    static bool VerificarPrimo(int num) // Função que verifica se o número é primo
+    {
+        if (num <= 1) // Números menores ou iguais a 1 não são primos
+        {
+            return false; 
+        }
+        for (int i = 2; i <= Math.Sqrt(num); i++) // Verifica divisibilidade até a raiz quadrada do número
+        {
+            if (num % i == 0) // Se for divisível por algum número além de 1 e ele mesmo, não é primo
+            {
+                return false;
+            }
+        }
+        return true; // Se não for divisível por nenhum número, é primo
+    }
+}
+
+```
+
+**QUESTÃO-09**
+
+```csharp
+
+/*QUESTÃO-09-Faça um procedimento que recebe, por parâmetro, a hora de início e a hora de término de
+um jogo, ambas subdivididas em 2 valores distintos: horas e minutos. O procedimento deve
+retornar, também por parâmetro (ref), a duração do jogo em horas e minutos, considerando
+que o tempo máximo de duração de um jogo é de 24 horas e que o jogo pode começar em
+um dia e terminar no outro.*/
+
+class questao9
+{
+    static void Main()
+    {
+        int horaInicio, minutoInicio, horaTermino, minutoTermino;
+        int duracaoHoras = 0, duracaoMinutos = 0; // Variáveis para armazenar a duração do jogo
+        Console.WriteLine("Digite a hora de início do jogo (0-23):");
+        horaInicio = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite os minutos de início do jogo (0-59):");
+        minutoInicio = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite a hora de término do jogo (0-23):");
+        horaTermino = int.Parse(Console.ReadLine());
+        Console.WriteLine("Digite os minutos de término do jogo (0-59):");
+        minutoTermino = int.Parse(Console.ReadLine());
+        CalcularDuracaoJogo(horaInicio, minutoInicio, horaTermino, minutoTermino, ref duracaoHoras, ref duracaoMinutos); // Chama o procedimento para calcular a duração do jogo
+        Console.WriteLine("A duração do jogo foi de {0} horas e {1} minutos.",duracaoHoras,duracaoMinutos);
+    }
+    static void CalcularDuracaoJogo(int horaInicio, int minutoInicio, int horaTermino, int minutoTermino, ref int duracaoHoras, ref int duracaoMinutos) // Procedimento para calcular a duração do jogo
+    {
+        if (minutoTermino < minutoInicio) // Ajusta os minutos se necessário
+        {
+            minutoTermino += 60;
+            horaTermino--;
+        }
+
+        if (horaTermino < horaInicio) // Ajusta as horas se necessário
+        {
+            horaTermino += 24;
+        }
+
+        duracaoHoras = horaTermino - horaInicio; 
+        duracaoMinutos = minutoTermino - minutoInicio; 
+    }
+}
+
+```
+
