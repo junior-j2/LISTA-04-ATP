@@ -1,23 +1,43 @@
-﻿/*QUESTÃO-06-Escreva um procedimento que receba como parâmetro o valor do salário e o índice de
-reajuste e calcule o salário atualizado. O método principal deve ler os dados, enviar para o
-procedimento e escrever o novo salário.*/
+﻿/*QUESTÃO-07-Faça uma função que lê um número indeterminado de notas de alunos, calcula e retorna a
+média das notas dos alunos aprovados (nota maior ou igual a 6). Faça um programa que lê
+o número de alunos e imprime a média retornada pela função.*/
 
-class questao6
+class questao7
 {
     static void Main()
     {
-        double s, r, ns;
-        Console.WriteLine("Digite o salário atual: "); 
-        s = double.Parse(Console.ReadLine());
-        Console.WriteLine("Digite o índice de reajuste: ");
-        r = double.Parse(Console.ReadLine());
-        ns = salarioatualizado(s, r);  //chamada do método
-        Console.WriteLine("O novo salário é: " + ns);
+        rodar(); //chama o método rodar
     }
-    static double salarioatualizado(double s, double r) //método que calcula o novo salário
+    static void rodar()
     {
-        double ns;
-        ns = s + (s * r / 100); //cálculo do novo salário
-        return ns; //retorna o novo salário para o método principal
+        double nota, a = 0,nt=0;
+        char resp;
+        do
+        {
+            Console.WriteLine("Qual sua nota ?");
+            nota = double.Parse(Console.ReadLine());
+            if (nota >= 6) //verifica se o aluno foi aprovado
+            {
+                a++; //conta o número de alunos aprovados
+                nt += nota; //soma as notas dos alunos aprovados
+            }
+            Console.WriteLine("Deseja continuar ? (s/n)"); //condição de parada
+            resp = char.Parse(Console.ReadLine());
+        } while (resp == 's' || resp == 'S'); 
+        Console.WriteLine("A média de notas de alunos aprovados é: " + Media(nt, a)); //chama o método média
+    }
+    static double Media(double nt, double a) //método que calcula a média
+    {
+        if (a == 0) //verifica se houve alunos aprovados
+        {
+            Console.WriteLine("Nenhum aluno foi aprovado.");
+            return 0;
+        }
+        else //calcula a média
+        {
+            double media;
+            media = nt / a;
+            return media;
+        }
     }
 }
